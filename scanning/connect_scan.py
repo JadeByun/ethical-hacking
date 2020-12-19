@@ -7,7 +7,7 @@ def connect_scan(host, port):
         sock.connect((host, int(port)))
         sock.settimeout(100)
         print('[+] {}/tcp open'.format(port))
-    except:
+    except Exception:
         print('[+] {}/tcp closed'.format(port))
     finally:
         sock.close()
