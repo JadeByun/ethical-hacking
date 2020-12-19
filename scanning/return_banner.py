@@ -7,8 +7,7 @@ def return_banner(host, port):
         sock.connect((host, int(port)))
         sock.settimeout(100)
         banner = sock.recv(1024)
-        print('[+] {}/tcp open'.format(port))
-        print(banner)
+        print(f'[+] {host}/{port}: {banner}')
     except:
         print('[+] {}/tcp closed'.format(port))
     finally:
