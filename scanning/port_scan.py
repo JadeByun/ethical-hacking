@@ -11,13 +11,13 @@ def port_scan():
 
     try:
         target_ip = gethostbyname(target_host)
-    except:
+    except Exception:
         print('Unknown host {}'.format(target_host))
 
     try:
         target_name = gethostbyaddr(target_ip)
         print('[+] Scan results for: ' + target_name[0])
-    except:
+    except Exception:
         print('[+] Scan results for: ' + target_ip)
     
     for target_port in target_ports:
