@@ -1,9 +1,8 @@
 from socket import *
 from threading import *
-
 from .get_target import *
-#from .connect_scan import *
 from .return_banner import *
+
 
 def port_scan():
     target = get_target()
@@ -20,7 +19,7 @@ def port_scan():
         print('[+] Scan results for: ' + target_name[0])
     except:
         print('[+] Scan results for: ' + target_ip)
-
+    
     for target_port in target_ports:
         t = Thread(target=return_banner, args=(target_ip, target_port))
         t.start()
