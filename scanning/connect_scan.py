@@ -1,12 +1,13 @@
 import socket
 
 
-def connect_scan(target_host, target_port):
+def connect_scan(host, port):
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.connect((target_host, target_port))
-        print('[+] {}/tcp open'.format(target_port))
+        sock.connect((host, port))
+        sock.settimeout(100)
+        print('[+] {}/tcp open'.format(port))
     except:
-        print('[+] {}/tcp closed'.format(target_port))
+        print('[+] {}/tcp closed'.format(port))
     finally:
         sock.close()
