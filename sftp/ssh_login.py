@@ -9,11 +9,11 @@ PROMPT = ['# ', '>>> ', '> ', '\$ ']
 def send_command(child, command):
     child.sendline(command)
     child.expect(PROMPT)
-    print(child.before)
+    print(child.before.decode())
 
 
 def connect(user, host, password):
-    child = pexpect.spawn('ssh' + user + '@' + host)
+    child = pexpect.spawn('ssh ' + user + '@' + host)
     ssh_new_key = 'Are you sure you want to continue connecting'
     match = child.expect([pexpect.TIMEOUT, ssh_new_key, '[P|p]assword: '])
     if match == 0:
@@ -36,9 +36,9 @@ def main():
     # host = '192.168.1.78'
     # user = 'msfadmin'
     # password = 'msfadmin'
-    user, host, password = get_target()
+    host, user, password = get_target()
     child = connect(user, host, password)
-    send_command(child, 'cat /etc/shadow | grep root;ps')
+    send_command(child, 'ls;ps')
 
 
 main()
