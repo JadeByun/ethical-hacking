@@ -1,15 +1,7 @@
 import pexpect
-from get_target import *
-
 # logs into remote systems and runs hostname
 
 PROMPT = ['# ', '>>> ', '> ', '\$ ']
-
-
-def send_command(child, command):
-    child.sendline(command)
-    child.expect(PROMPT)
-    print(child.before.decode())
 
 
 def connect(user, host, password):
@@ -27,18 +19,6 @@ def connect(user, host, password):
             return
 
     child.sendline(password)
-    child.expect(PROMPT)
+    child.expect(PROMPT, timeout=0.5)
 
     return child
-
-
-def main():
-    # host = '192.168.1.78'
-    # user = 'msfadmin'
-    # password = 'msfadmin'
-    host, user, password = get_target()
-    child = connect(user, host, password)
-    send_command(child, 'ls;ps')
-
-
-main()

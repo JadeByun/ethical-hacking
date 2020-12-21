@@ -12,7 +12,7 @@ def get_target():
     user = args.user
     password = args.password
 
-    if host is None or user is None or password is None:
+    if host is None or user is None:
         print(parser.usage)
         exit(0)
 
