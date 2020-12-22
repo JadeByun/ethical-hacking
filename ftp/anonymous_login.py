@@ -9,6 +9,3 @@ def anonymous_login(host):
         return True
     except Exception:
         print('[-] ' + host + ' FTP anonymous login failed.')
-
-host = '192.168.1.78'
-anonymous_login(host)

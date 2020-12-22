@@ -1,6 +1,6 @@
 from socket import *
 from threading import *
-from .get_target import *
+from get_target import *
 from .return_banner import *
 
 

@@ -3,10 +3,10 @@
 
 # from scanning.port_scan import *
 
-from sftp.get_target import *
+from get_target import *
 # from sftp.ssh_login import *
 # from sftp.ssh_command import *
-from sftp.ssh_bruteforce import *
+from ssh.ssh_bruteforce import *
 
 if __name__ == '__main__':
     # 1. scan open ports
@@ -21,5 +21,5 @@ if __name__ == '__main__':
     # print(send_command(child))
 
     # 3. SSH Brute-Force attack
-    host, user, _ = get_target()
+    host, user, _, _= get_target()
     bruteforce(user, host)

@@ -19,6 +19,6 @@ def connect(user, host, password):
             return
 
     child.sendline(password)
-    child.expect(PROMPT, timeout=0.5)
+    child.expect(PROMPT, timeout=1)
 
     return child
