@@ -3,7 +3,7 @@ from .ssh_command import *
 from termcolor import colored
 
 
-def bruteforce(user, host):
+def ssh_bruteforce(user, host):
     filepath = input('Enter the absolute path of a password list: ')
     file = open(filepath, 'r')
     for password in file.readlines():
