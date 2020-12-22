@@ -21,5 +21,6 @@ if __name__ == '__main__':
     # print(send_command(child))
 
     # 3. SSH Brute-Force attack
-    host, user, _, _= get_target()
+    host, _, user, _ = get_target()
+    print(host, user)
     bruteforce(user, host)

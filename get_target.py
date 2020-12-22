@@ -13,6 +13,8 @@ def get_target():
     ports = args.port
     user = args.user
     password = args.password
+    
+    print('args = ', args)
 
     if host is None:
         print(parser.usage)
