@@ -1,14 +1,15 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-# from scanning.port_scan import *
-
-from get_target import *
+#from scanning.port_scan import *
+#from utilities.get_target import *
 #from ssh.ssh_login import *
 #from ssh.ssh_command import *
 #from ssh.ssh_bruteforce import *
 #from ftp.anonymous_login import *
-from ftp.ftp_bruteforce import *
+#from ftp.ftp_bruteforce import *
+
+from lan.macchanger import *
 
 if __name__ == '__main__':
     # 1. scan open ports
@@ -32,5 +33,8 @@ if __name__ == '__main__':
     # anonymous_login(host)
 
     # 5. FTP Brute-Force attack
-    host, _, _, _ = get_target()
-    ftp_bruteforce(host)
+    # host, _, _, _ = get_target()
+    # ftp_bruteforce(host)
+
+    # 6. LAN change MAC address
+    macchanger()
