@@ -3,9 +3,9 @@ from termcolor import colored
 
 
 def change_mac_address(interface, mac):
-    subprocess.call(['ifconfig ', interface, ' down'])
-    subprocess.call(['ifconfig ', interface, 'hw ', 'ether ', mac])
-    subprocess.call(['ifconfig ', interface, ' down'])
+    subprocess.call(['ifconfig', interface, 'down'])
+    subprocess.call(['ifconfig', interface, 'hw', 'ether', mac])
+    subprocess.call(['ifconfig', interface, 'down'])
 
 
 def macchanger():
